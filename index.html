@@ -1,28 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="./style.css">
-  
-  <title>Loopstudios landing page</title>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<link rel="stylesheet" href="./style.css" />
 
-</head>
-<body>
-
-  <div>
-    
-  </div>
-  <!-- About
+		<title>Loopstudios landing page</title>
+	</head>
+	<body>
+		<div class="hero">
+			<!-- logo & hamburger -->
+			<div class="absolute flex items-center justify-between w-full px-6 pt-10">
+				<img src="./images/logo.svg" alt="logo" class="w-1/2" />
+				<!-- hamburger -->
+				<button @click="openMenu = !openMenu">
+					<img v-if="!openMenu" src="./images/icon-hamburger.svg" />
+					<img v-else src="./images/icon-close.svg" alt="" />
+				</button>
+			</div>
+			<!-- content -->
+			<p
+				class="absolute p-5 mx-6 text-4xl tracking-wider text-white uppercase border top-48 josefin"
+			>
+				Immersive experiences that <br />
+				deliver
+			</p>
+		</div>
+		<!-- About
   Careers
   Events
   Products
   Support
 
-  Immersive experiences that deliver
+  
 
   The leader in interactive VR
 
@@ -52,5 +74,12 @@
 
   © 2021 Loopstudios. All rights reserved. -->
 
-</body>
+		<!-- PetiteVue -->
+		<script type="module">
+			import { createApp } from "https://unpkg.com/petite-vue?module";
+			createApp({
+				openMenu: false,
+			}).mount();
+		</script>
+	</body>
 </html>
