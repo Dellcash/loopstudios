@@ -86,8 +86,16 @@
 			</div>
 			<!-- images -->
 			<div>
-				<h1 class="text-2xl text-center uppercase josefin">Our creations</h1>
-				<div class="relative mb-5" v-for="creation in creations" :key="creation">
+				<h1
+					class="mb-10 text-2xl font-black tracking-wider text-center uppercase josefin"
+				>
+					Our creations
+				</h1>
+				<div
+					class="relative mb-6"
+					v-for="creation in creations"
+					:key="creation"
+				>
 					<img :src="creation.src" />
 					<h1
 						class="absolute top-0 p-5 text-2xl leading-6 tracking-wide text-white uppercase josefin top-1/3"
@@ -97,27 +105,39 @@
 					</h1>
 				</div>
 			</div>
+			<div class="flex justify-center">
+				<button
+					class="py-2 text-xs font-black uppercase border border-black px-7 alata"
+					style="letter-spacing: 5px"
+				>
+					See all
+				</button>
+			</div>
 		</div>
-
-		<!-- 
-
-  
-
-  
-
-  
-
-  
-
-  See all
-
-  About
-  Careers
-  Events
-  Products
-  Support
-
-  © 2021 Loopstudios. All rights reserved. -->
+		<!-- footer -->
+		<div class="footer">
+			<!-- logo -->
+			<img src="./images/logo.svg" class="w-1/3 pb-8 m-auto" />
+			<!-- links -->
+			<h1
+				v-for="tab in tabs"
+				:key="tab"
+				class="pb-4 tracking-tighter capitalize josefin"
+			>
+				{{ tab }}
+			</h1>
+			<!-- socials -->
+			<div class="flex items-center justify-center mt-5">
+				<img
+					class="px-3"
+					v-for="social in socials"
+					:key="social"
+					:src="social.src"
+					:alt="social.alt"
+				/>
+			</div>
+			<p class="pt-4 text-sm text-gray-500">© 2021 Loopstudios. All rights reserved.</p>
+		</div>
 
 		<!-- PetiteVue -->
 		<script type="module">
@@ -125,48 +145,66 @@
 			createApp({
 				openMenu: false,
 				tabs: ["about", "careers", "events", "products", "support"],
-				creations:[
+				creations: [
 					{
-						src:'./images/mobile/image-deep-earth.jpg',
-						first:'Deep',
-						last:'earth'
+						src: "./images/mobile/image-deep-earth.jpg",
+						first: "Deep",
+						last: "earth",
 					},
 					{
-						src:'./images/mobile/image-night-arcade.jpg',
-						first:'Night',
-						last:'arcade'
+						src: "./images/mobile/image-night-arcade.jpg",
+						first: "Night",
+						last: "arcade",
 					},
 					{
-						src:'./images/mobile/image-soccer-team.jpg',
-						first:'Soccer',
-						last:'team VR'
+						src: "./images/mobile/image-soccer-team.jpg",
+						first: "Soccer",
+						last: "team VR",
 					},
 					{
-						src:'./images/mobile/image-grid.jpg',
-						first:'The',
-						last:'grid'
+						src: "./images/mobile/image-grid.jpg",
+						first: "The",
+						last: "grid",
 					},
 					{
-						src:'./images/mobile/image-from-above.jpg',
-						first:'From up',
-						last:'above VR'
+						src: "./images/mobile/image-from-above.jpg",
+						first: "From up",
+						last: "above VR",
 					},
 					{
-						src:'./images/mobile/image-Pocket-borealis.jpg',
-						first:'Pocket',
-						last:'borealis'
+						src: "./images/mobile/image-Pocket-borealis.jpg",
+						first: "Pocket",
+						last: "borealis",
 					},
 					{
-						src:'./images/mobile/image-curiosity.jpg',
-						first:'The',
-						last:'curiosity'
+						src: "./images/mobile/image-curiosity.jpg",
+						first: "The",
+						last: "curiosity",
 					},
 					{
-						src:'./images/mobile/image-fisheye.jpg',
-						first:'Make it',
-						last:'fisheye'
+						src: "./images/mobile/image-fisheye.jpg",
+						first: "Make it",
+						last: "fisheye",
 					},
-				]
+				],
+				socials: [
+					{
+						src: "./images/icon-facebook.svg",
+						alt: "facebook",
+					},
+					{
+						src: "./images/icon-twitter.svg",
+						alt: "twitter",
+					},
+					{
+						src: "./images/icon-instagram.svg",
+						alt: "instagram",
+					},
+					{
+						src: "./images/icon-pinterest.svg",
+						alt: "pinterest",
+					},
+				],
 			}).mount();
 		</script>
 	</body>
