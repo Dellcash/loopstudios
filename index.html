@@ -31,13 +31,40 @@
 				</button>
 			</div>
 			<!-- content -->
-			<p
-				class="absolute p-5 mx-6 text-4xl tracking-wider text-white uppercase border top-48 josefin"
-			>
-				Immersive experiences that <br />
-				deliver
-			</p>
+			<div>
+				<p
+					class="absolute p-5 mx-6 text-4xl tracking-wider text-white uppercase border top-48 josefin"
+				>
+					Immersive experiences that <br />
+					deliver
+				</p>
+			</div>
+			<!-- menu -->
+			<div v-if="openMenu" class="absolute w-full h-full bg-black">
+				<!-- logo & hamburger -->
+				<div
+					class="absolute flex items-center justify-between w-full px-6 pt-10"
+				>
+					<img src="./images/logo.svg" alt="logo" class="w-1/2" />
+					<!-- hamburger -->
+					<button @click="openMenu = !openMenu">
+						<img v-if="openMenu" src="./images/icon-close.svg" alt="" />
+						<img v-else src="./images/icon-hamburger.svg" />
+					</button>
+				</div>
+				<!-- tabs -->
+				<div class="absolute px-6 top-48">
+					<h1
+						v-for="tab in tabs"
+						:key="tab"
+						class="pb-3 text-2xl tracking-wide text-white text-gray-200 uppercase josefin "
+					>
+						{{ tab }}
+					</h1>
+				</div>
+			</div>
 		</div>
+
 		<!-- About
   Careers
   Events
@@ -79,6 +106,7 @@
 			import { createApp } from "https://unpkg.com/petite-vue?module";
 			createApp({
 				openMenu: false,
+				tabs: ["about", "careers", "events", "products", "support"],
 			}).mount();
 		</script>
 	</body>
