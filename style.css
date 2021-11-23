@@ -10,6 +10,10 @@ body{
 .josefin{
   font-family: 'Josefin Sans', sans-serif;
 }
+/* remove flash page */
+[v-cloak] {
+	display: none;
+}
 .hero{
   background-image: url('./images/mobile/image-hero.jpg');
   background-size: cover;
