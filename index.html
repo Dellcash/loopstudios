@@ -20,8 +20,8 @@
 		<title>Loopstudios landing page</title>
 	</head>
 	<body>
-		<!-- hero -->
-		<div class="hero">
+		<!-- hero mobile-->
+		<div class="hero-mobile lg:hidden">
 			<!-- logo & hamburger -->
 			<div class="absolute flex items-center justify-between w-full px-6 pt-10">
 				<img src="./images/logo.svg" alt="logo" class="w-1/2" />
@@ -64,6 +64,34 @@
 						{{ tab }}
 					</h1>
 				</div>
+			</div>
+		</div>
+		<!-- hero desktop -->
+		<div class="hidden hero-desktop lg:block">
+			<!-- logo -->
+			<div class="flex items-center justify-between w-4/5 pt-16 m-auto">
+				<img src="./images/logo.svg" class="w-1/5" />
+				<div class="flex items-center">
+					<h1
+						v-cloak
+						v-for="tab in tabs"
+						:key="tab"
+						class="text-lg text-white capitalize josefin pr-7 tab-desktop"
+					>
+						{{ tab }}
+					</h1>
+				</div>
+			</div>
+			<!-- content -->
+			<div>
+				<p
+					class="absolute p-10 pr-24 leading-none leading-3 tracking-wider text-white uppercase border-2 left-32 top-52 josefin"
+					style="font-size: 4rem;"
+				>
+					Immersive <br />
+					experiences <br />
+					that deliver
+				</p>
 			</div>
 		</div>
 		<!-- section 1 -->
@@ -136,7 +164,9 @@
 					:alt="social.alt"
 				/>
 			</div>
-			<p class="pt-4 text-sm text-gray-500">© 2021 Loopstudios. All rights reserved.</p>
+			<p class="pt-4 text-sm text-gray-500">
+				© 2021 Loopstudios. All rights reserved.
+			</p>
 		</div>
 
 		<!-- PetiteVue -->
